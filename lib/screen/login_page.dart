@@ -58,6 +58,7 @@ class _PageLoginState extends State<PageLogin> {
     }
 
     if (viewmodel.status == 3) {
+      viewmodel.status = 0;
       Future.delayed(Duration.zero, () {
         Navigator.popAndPushNamed(context, PageDashBoard.routername);
       });

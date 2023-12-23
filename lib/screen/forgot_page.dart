@@ -79,11 +79,12 @@ class _PageForgotState extends State<PageForgot> {
                                             fontWeight: StyleGlobal.fontWeight),
                                       ),
                                       const Text(
-                                        'Lần sau chừa nha baby :))',
+                                        'Hệ thống đã xác nhận ! \nBạn kiểm tra Email để tiến hành đổi và đăng nhập lại.',
                                         style: TextStyle(
                                             fontSize: 16,
                                             color: Color.fromARGB(255, 0, 0, 0),
                                             fontWeight: StyleGlobal.fontWeight),
+                                        textAlign: TextAlign.center,
                                       ),
                                       const SizedBox(
                                         height: 40,

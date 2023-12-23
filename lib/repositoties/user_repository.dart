@@ -8,6 +8,7 @@ import 'dart:io';
 
 class UserRepository {
   final ApiService api = ApiService();
+  int status = 0;
   Future<User> getUserInfo() async {
     User user = User();
     final response = await api.getUserInfo();
@@ -23,7 +24,10 @@ class UserRepository {
     var response = await api.updateProfile();
     if (response != null) {
       kq = true;
+      status = 1;
     }
+    // status = 0;
+
     return kq;
   }
 

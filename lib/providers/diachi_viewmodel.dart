@@ -41,15 +41,14 @@ class DiachiViewModel with ChangeNotifier {
   Future<void> setDistrict(int id) async {
     if (id != CurDistrictID) {
       CurDistrictID = id;
-      CurWardID = 0;
       final repo = PlaceRepository();
       listWard = await repo.getWard(CurDistrictID);
     }
   }
 
-  // Future<void> setWard(int id) async {
-  //   if (id != CurDistrictID) {
-  //     CurWardID = id;
-  //   }
-  // }
+  Future<void> setWard(int id) async {
+    if (id != CurDistrictID) {
+      CurWardID = id;
+    }
+  }
 }

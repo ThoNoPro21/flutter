@@ -68,7 +68,7 @@ class _PageLandingState extends State<PageLanding> {
                                 ),
                               ),
                               const Text(
-                                "to Summoner's Rift!",
+                                "to TAY NGUYEN UNIVERSITY!",
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: StyleGlobal.fontWeight,

@@ -163,7 +163,7 @@ class _CusTom_DropDown_PlaceState extends State<CusTom_DropDown_Place> {
                   });
                 },
                 child: AutoSizeText(
-                  outputName == "" ? "Không có" : outputName,
+                  widget.valueName == "" ? "Không có" : widget.valueName,
                   style: StyleGlobal.h4,
                   overflow: TextOverflow.clip,
                 ),

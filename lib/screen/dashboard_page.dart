@@ -193,6 +193,55 @@ class MenuBar extends StatefulWidget {
 
 class _MenuBarState extends State<MenuBar> {
   @override
+  // void _showAlertDialog(BuildContext context) {
+  //   final viewmodel = Provider.of<MenuBarViewModel>(context, listen: false);
+  //   final dangxuat = Provider.of<LoginViewModel>(context, listen: false);
+  //   showDialog(
+  //     context: context,
+  //     builder: (context) {
+  //       return AlertDialog(
+  //         title: const Text(
+  //           'Đăng xuất',
+  //           style: TextStyle(
+  //             color: Colors.pink,
+  //             fontSize: 24,
+  //             fontWeight: FontWeight.bold,
+  //           ),
+  //         ),
+  //         content: const Text(
+  //           'Bạn có chắc chắn đăng xuất không?',
+  //           // StyleGlobal.h3 should be defined somewhere
+  //         ),
+  //         actions: [
+  //           ElevatedButton(
+  //             onPressed: () {
+  //               viewmodel.SetSelected(0);
+  //               Navigator.of(context).pop();
+  //               Navigator.of(context).pop();
+  //             },
+  //             child: const Text(
+  //               'Hủy',
+  //               // StyleGlobal.h4 should be defined somewhere
+  //             ),
+  //           ),
+  //           ElevatedButton(
+  //             child: const Text(
+  //               'OK',
+  //               // StyleGlobal.h4 should be defined somewhere
+  //             ),
+  //             onPressed: () {
+  //               LoginViewModel().logout();
+  //               Navigator.of(context).popUntil((route) => route.isFirst);
+  //               Navigator.pushReplacementNamed(context, '/login');
+  //             },
+  //           ),
+  //         ],
+  //       );
+  //     },
+  //   );
+  // }
+
+  @override
   Widget build(BuildContext context) {
     final viewmodel = Provider.of<MenuBarViewModel>(context);
     return Card(
@@ -202,7 +251,8 @@ class _MenuBarState extends State<MenuBar> {
         decoration: viewmodel.selected == widget.selected
             ? BoxDecoration(
                 color: Colors.pink.shade300,
-                borderRadius: BorderRadius.circular(10))
+                borderRadius: BorderRadius.circular(10),
+              )
             : null,
         child: ListTile(
           leading: Image(
@@ -223,6 +273,13 @@ class _MenuBarState extends State<MenuBar> {
           onTap: () {
             viewmodel.SetSelected(widget.selected);
             Navigator.pop(context);
+            // if (widget.selected == 5) {
+            //   _showAlertDialog(context);
+            //   // LoginViewModel().logout();
+            //   // Navigator.pushReplacementNamed(context, '/login');
+            // } else {
+            //   Navigator.pop(context);
+            // }
           },
         ),
       ),

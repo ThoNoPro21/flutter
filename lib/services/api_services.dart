@@ -5,7 +5,6 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter_login/models/profile.dart';
 import 'package:http/http.dart' as http;
-import 'package:intl/intl.dart';
 
 class ApiService {
   static final ApiService _instance = ApiService._internal();
@@ -282,10 +281,10 @@ class ApiService {
       "Accept": "application/json",
       // "Access-Control-Allow-Origin": "*",
     };
-    DateTime dateTime = DateFormat('dd/MM/yyyy').parse(Profile().user.birthday);
+    // DateTime dateTime = DateFormat('dd/MM/yyyy').parse(Profile().user.birthday);
 
-    // Format the date to the desired format
-    String formattedDate = DateFormat('yyyy-MM-dd').format(dateTime);
+    // // Format the date to the desired format
+    // String formattedDate = DateFormat('yyyy-MM-dd').format(dateTime);
     Map<String, dynamic> param = {
       "first_name": Profile().user.firstName,
       "last_name": Profile().user.lastName,
@@ -298,8 +297,9 @@ class ApiService {
       "wardid": Profile().user.wardid,
       "wardname": Profile().user.wardname,
       "street": "",
-      "birthday": formattedDate,
+      "birthday": Profile().user.birthday,
     };
+
     try {
       final response = await _dio.patch(
         url_updateProfile,

@@ -9,9 +9,9 @@ import 'package:flutter_login/repositoties/user_repository.dart';
 class LoginViewModel with ChangeNotifier {
   String errorMessage = '';
   int status = 0;
-
+  final profileToken = Profile();
   void logout() {
-    Profile().token = '';
+    profileToken.token = '';
     notifyListeners();
   }
 
