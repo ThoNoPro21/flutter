@@ -402,6 +402,7 @@ class TaiKhoanMenu extends StatelessWidget {
           onTap: () async {
             if (_isEnabled) {
               await user.updateProfile();
+              // ignore: use_build_context_synchronously
               showAlertDialog(context);
               Future.delayed(const Duration(seconds: 2), () {
                 Navigator.of(context).pop();
